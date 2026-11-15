@@ -1,111 +1,282 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POD2POD | فروشگاه ویپ و پاد سیستم</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* اضافه کردن فونت‌های مدرن فارسی و انگلیسی */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Vazirmatn:wght@300;400;700;900&display=swap');
 
-    <!-- هدر و منوی ناوبری -->
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <!-- استفاده از لوگو -->
-                <img src="logo.png" alt="POD2POD Logo" onerror="this.src='https://via.placeholder.com/150x50/111/00ffcc?text=POD2POD'">
-            </div>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#" class="active"><i class="fas fa-home"></i> صفحه اصلی</a></li>
-                    <li><a href="#"><i class="fas fa-box"></i> محصولات</a></li>
-                    <li><a href="#"><i class="fas fa-list"></i> دسته‌بندی‌ها <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#"><i class="fas fa-gift"></i> پیشنهادات ویژه</a></li>
-                </ul>
-            </nav>
+:root {
+    --bg-dark: #021435;
+    --bg-blue: #043a8a;
+    --neon-blue: #00d2ff;
+    --neon-light: #7df9ff;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(0, 210, 255, 0.3);
+    --text-main: #ffffff;
+    --text-muted: #a0c4ff;
+}
 
-            <div class="header-actions">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-                <div class="cart-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="badge">0</span>
-                </div>
-                <a href="#" class="login-btn">ورود</a>
-            </div>
-        </div>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* فونت فارسی مدرن */
+    font-family: 'Vazirmatn', sans-serif;
+}
 
-    <!-- بنر اصلی (Hero Section) -->
-    <section class="hero-section">
-        <div class="container">
-            <!-- استفاده از تصویر هدر در پس‌زمینه یا به عنوان عکس اصلی -->
-            <img src="header.png" alt="VIDGE VBar" class="hero-banner-img" onerror="this.style.display='none'">
-            
-            <!-- المان‌های متنی روی بنر (در صورت نیاز به کدنویسی روی عکس) -->
-            <div class="hero-text-overlay">
-                <h1>پاد سیستم VIDGE VBar</h1>
-                <p>نمایشگر هوشمند، توان قابل تنظیم و Airflow دقیق</p>
-                <div class="hero-features">
-                    <span><i class="fas fa-tint"></i> مخزن 2ml</span>
-                    <span><i class="fas fa-battery-full"></i> باتری 700mAh</span>
-                    <span><i class="fas fa-bolt"></i> توان ۱۸، ۲۲ و ۲۵ وات</span>
-                </div>
-                <a href="#" class="cta-btn">مشاهده محصول</a>
-            </div>
-        </div>
-    </section>
+body {
+    background: radial-gradient(circle at center, var(--bg-blue) 0%, var(--bg-dark) 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    line-height: 1.6;
+}
 
-    <!-- بخش دسته‌بندی محصولات -->
-    <section class="categories-section container">
-        <h2 class="section-title">خرید ویپ و پاد سیستم با قیمت مناسب | فروشگاه POD2POD</h2>
-        
-        <div class="categories-grid">
-            <!-- دسته 1 -->
-            <a href="#" class="category-card">
-                <img src="image1.png" alt="پاد سیستم" onerror="this.src='https://via.placeholder.com/300x200/222/00ffcc?text=Pod+System'">
-                <div class="cat-info">
-                    <h3>پاد سیستم</h3>
-                    <span class="arrow"><i class="fas fa-chevron-left"></i></span>
-                </div>
-            </a>
-            <!-- دسته 2 -->
-            <a href="#" class="category-card">
-                <img src="image1.png" alt="ویپ" onerror="this.src='https://via.placeholder.com/300x200/222/00ffcc?text=Vape'">
-                <div class="cat-info">
-                    <h3>ویپ</h3>
-                    <span class="arrow"><i class="fas fa-chevron-left"></i></span>
-                </div>
-            </a>
-            <!-- دسته 3 -->
-            <a href="#" class="category-card">
-                <img src="image1.png" alt="جویس" onerror="this.src='https://via.placeholder.com/300x200/222/00ffcc?text=Juice'">
-                <div class="cat-info">
-                    <h3>جویس</h3>
-                    <span class="arrow"><i class="fas fa-chevron-left"></i></span>
-                </div>
-            </a>
-            <!-- دسته 4 -->
-            <a href="#" class="category-card">
-                <img src="image1.png" alt="سالط" onerror="this.src='https://via.placeholder.com/300x200/222/00ffcc?text=Salt+Nic'">
-                <div class="cat-info">
-                    <h3>سالط (Salt)</h3>
-                    <span class="arrow"><i class="fas fa-chevron-left"></i></span>
-                </div>
-            </a>
-        </div>
-    </section>
+/* تیترها با فونت انگلیسی تکنولوژیک */
+h1, h2, h3, .logo-text {
+    font-family: 'Orbitron', 'Vazirmatn', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-    <!-- فوتر ساده -->
-    <footer>
-        <div class="container">
-            <p>© 2024 تمامی حقوق برای فروشگاه POD2POD محفوظ است.</p>
-        </div>
-    </footer>
+.neon-text {
+    color: var(--neon-light);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
 
-</body>
-</html>
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(2, 20, 53, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+.logo-text span { color: var(--neon-blue); }
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-light);
+    text-shadow: 0 0 8px var(--neon-blue);
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-family: 'Vazirmatn', sans-serif;
+    cursor: pointer;
+    transition: 0.4s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #0055ff, var(--neon-blue));
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+.btn-outline:hover {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    /* فونت انگلیسی برای این بخش */
+    font-family: 'Orbitron', sans-serif; 
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Products Grid */
+.products-section {
+    padding: 50px;
+}
+
+.products-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 210, 255, 0.2);
+    border-color: var(--neon-light);
+}
+
+/* استایل تصویر محصول پیش‌فرض */
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* برای پوشش کامل فضای کارت */
+    border-radius: 15px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 15px rgba(0,210,255,0.3));
+    transition: 0.4s;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(0,210,255,0.6));
+}
+
+.product-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color: var(--neon-light);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Auth Pages (Login/Register) */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.auth-box {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0, 210, 255, 0.1);
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    color: white;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+}
+
+.auth-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.auth-switch a {
+    color: var(--neon-blue);
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 50px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
